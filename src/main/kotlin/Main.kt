@@ -36,7 +36,6 @@ class GamePanel : JPanel() {
     }
 
     private var lastFrameLength = 0.0
-    private val expectedFps = 60
 
     @OptIn(ExperimentalTime::class)
     fun loop() {

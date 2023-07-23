@@ -2,7 +2,7 @@ import java.awt.*
 import kotlin.random.Random
 
 val WINDOW_HEIGHT = 600
-val WINDOW_WIDTH = 600
+val WINDOW_WIDTH = 1200
 
 data class Point(var x: Int, var y: Int)
 
@@ -14,8 +14,8 @@ class Snake(
     private val H = WINDOW_HEIGHT / widthOfBlock
     private val W = WINDOW_WIDTH / widthOfBlock
     private val rnd = Random.Default
-    private val startPosition: Point = Point(rnd.nextInt(W), rnd.nextInt(H))
-    private var foodPosition: Point = Point(rnd.nextInt(W), rnd.nextInt(H))
+    private val startPosition: Point = Point(rnd.nextInt(W - 2), rnd.nextInt(H - 2))
+    private var foodPosition: Point = Point(rnd.nextInt(W - 2), rnd.nextInt(H - 2))
     private var blockList = mutableListOf<Point>(startPosition)
     public var gameOver: Boolean = false
 
@@ -90,7 +90,7 @@ class Snake(
 }
 
 class Game {
-    val snake = Snake(0, 30)
+    val snake = Snake(0, 60)
     fun render(g: Graphics) {
         snake.render(g)
     }
